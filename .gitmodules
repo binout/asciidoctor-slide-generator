@@ -1,3 +1,6 @@
 [submodule "asciidoctor-backends"]
 	path = asciidoctor-backends
 	url = https://github.com/asciidoctor/asciidoctor-backends.git
+[submodule "src/main/slides/deckjs/deck.js"]
+	path = src/main/slides/deckjs/deck.js
+	url = git://github.com/imakewebthings/deck.js.git
