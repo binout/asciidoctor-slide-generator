@@ -1,0 +1,43 @@
+= asciidoctor-slide-generator
+:compat-mode:
+
+A template projet to generate slide with asciidoctor
+
+== Prerequesites
+
+* JDK
+* Maven 3
+
+== Usage
+
+. Clone this repository
+[source]
+----
+git clone https://github.com/binout/asciidoctor-slide-generator.git
+----
+
+[start=2]
+. Write your asciidoc slides in +src/main/slide/$backend$+ (by default backend is +deckjs+)
+
+[start=3]
+. To generate your slides, just launch :
+[source]
+----
+mvn
+----
+
+[start=4]
+. Your slides are available in +target/generated-slides+ !
+
+== Backend
+
+Each backend has a Maven profile.
+
+=== deck.js
+
+[source]
+----
+mvn -Pdeckjs
+----
+
+For more information, you can read this http://asciidoctor.org/docs/install-and-use-deckjs-backend/[article].
