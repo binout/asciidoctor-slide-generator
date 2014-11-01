@@ -4,3 +4,9 @@
 [submodule "src/main/slides/deckjs/deck.js"]
 	path = src/main/slides/deckjs/deck.js
 	url = git://github.com/imakewebthings/deck.js.git
+[submodule "src/main/slides/revealjs/reveal.js"]
+	path = src/main/slides/revealjs/reveal.js
+	url = git://github.com/hakimel/reveal.js.git
+[submodule "asciidoctor-reveal.js"]
+	path = asciidoctor-reveal.js
+	url = https://github.com/asciidoctor/asciidoctor-reveal.js

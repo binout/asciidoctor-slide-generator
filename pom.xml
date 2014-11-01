@@ -44,21 +44,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- Needed by deckjs backend -->
-        <dependency>
-            <groupId>rubygems</groupId>
-            <artifactId>tilt</artifactId>
-            <version>2.0.1</version>
-            <type>gem</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>rubygems</groupId>
-            <artifactId>haml</artifactId>
-            <version>4.0.5</version>
-            <type>gem</type>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -125,6 +110,22 @@
                 <backend>deckjs</backend>
                 <templateDir>${basedir}/asciidoctor-backends/haml</templateDir>
             </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>rubygems</groupId>
+                    <artifactId>tilt</artifactId>
+                    <version>2.0.1</version>
+                    <type>gem</type>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>rubygems</groupId>
+                    <artifactId>haml</artifactId>
+                    <version>4.0.5</version>
+                    <type>gem</type>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -144,6 +145,48 @@
                                         <navigation>true</navigation>
                                         <goto>true</goto>
                                         <status>true</status>
+                                    </attributes>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>revealjs</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <backend>revealjs</backend>
+                <templateDir>${basedir}/asciidoctor-reveal.js/templates/slim</templateDir>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>rubygems</groupId>
+                    <artifactId>slim</artifactId>
+                    <version>2.1.0</version>
+                    <type>gem</type>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctor-maven-plugin</artifactId>
+                        <version>${asciidoctor.version}</version>
+                        <executions>
+                            <execution>
+                                <id>generate-slides</id>
+                                <goals>
+                                    <goal>process-asciidoc</goal>
+                                </goals>
+                                <configuration>
+                                    <attributes>
+
                                     </attributes>
                                 </configuration>
                             </execution>

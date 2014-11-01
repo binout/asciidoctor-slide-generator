@@ -41,3 +41,12 @@ mvn -Pdeckjs
 ----
 
 For more information, you can read this http://asciidoctor.org/docs/install-and-use-deckjs-backend/[article].
+
+=== reveal.js
+
+[source]
+----
+mvn --Prevealjs
+----
+
+For more information, you can refer to this https://github.com/asciidoctor/asciidoctor-reveal.js/[repository].
