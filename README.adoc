@@ -58,3 +58,12 @@ mvn -Prevealjs
 ----
 
 For more information, you can refer to this https://github.com/asciidoctor/asciidoctor-reveal.js/[repository].
+
+=== dzslides
+
+[source]
+----
+mvn -Pdzslides
+----
+
+For more information, you can refer to this https://github.com/mojavelinux/dzslides/[repository].

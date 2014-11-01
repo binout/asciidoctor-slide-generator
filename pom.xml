@@ -75,8 +75,6 @@
                 <configuration>
                     <gemPath>${project.build.directory}/gems-provided</gemPath>
                     <requires>
-                        <require>tilt</require>
-                        <require>haml</require>
                         <require>asciidoctor-diagram</require>
                     </requires>
                 </configuration>
@@ -131,7 +129,6 @@
                     <plugin>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctor-maven-plugin</artifactId>
-                        <version>${asciidoctor.version}</version>
                         <executions>
                             <execution>
                                 <id>generate-slides</id>
@@ -140,6 +137,7 @@
                                 </goals>
                                 <configuration>
                                      <attributes>
+                                        <!-- put here the deck.js specific attributes -->
                                         <deckjs_theme>swiss</deckjs_theme>
                                         <deckjs_transition>fade</deckjs_transition>
                                         <navigation>true</navigation>
@@ -156,9 +154,6 @@
 
         <profile>
             <id>revealjs</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <backend>revealjs</backend>
                 <templateDir>${basedir}/asciidoctor-reveal.js/templates/slim</templateDir>
@@ -177,7 +172,6 @@
                     <plugin>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctor-maven-plugin</artifactId>
-                        <version>${asciidoctor.version}</version>
                         <executions>
                             <execution>
                                 <id>generate-slides</id>
@@ -186,7 +180,49 @@
                                 </goals>
                                 <configuration>
                                     <attributes>
+                                        <!-- put here the reveal.js specific attributes -->
+                                    </attributes>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
+        <profile>
+            <id>dzslides</id>
+            <properties>
+                <backend>dzslides</backend>
+                <templateDir>${basedir}/asciidoctor-backends/slim</templateDir>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>rubygems</groupId>
+                    <artifactId>slim</artifactId>
+                    <version>2.1.0</version>
+                    <type>gem</type>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctor-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>generate-slides</id>
+                                <goals>
+                                    <goal>process-asciidoc</goal>
+                                </goals>
+                                <configuration>
+                                    <attributes>
+                                       <!-- put here the dzslides specific attributes -->
+                                        <dzslides-style>stormy</dzslides-style>
+                                        <dzslides-transition>fade</dzslides-transition>
+                                        <dzslides-fonts>family=Yanone+Kaffeesatz:400,700,200,300&amp;family=Cedarville+Cursive</dzslides-fonts>
+                                        <dzslides-highlight>monokai</dzslides-highlight>
                                     </attributes>
                                 </configuration>
                             </execution>

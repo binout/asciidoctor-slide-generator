@@ -10,3 +10,6 @@
 [submodule "asciidoctor-reveal.js"]
 	path = asciidoctor-reveal.js
 	url = https://github.com/asciidoctor/asciidoctor-reveal.js
+[submodule "src/main/slides/dzslides/dzslides"]
+	path = src/main/slides/dzslides/dzslides
+	url = https://github.com/mojavelinux/dzslides.git
