@@ -46,7 +46,7 @@ For more information, you can read this http://asciidoctor.org/docs/install-and-
 
 [source]
 ----
-mvn --Prevealjs
+mvn -Prevealjs
 ----
 
 For more information, you can refer to this https://github.com/asciidoctor/asciidoctor-reveal.js/[repository].
