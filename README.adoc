@@ -17,23 +17,31 @@ git clone https://github.com/binout/asciidoctor-slide-generator.git
 ----
 
 [start=2]
-. Write your asciidoc slides in +src/main/slide/$backend$+ (by default backend is +deckjs+)
+. Init git submodules (deck.js, reveal.js, ...)
+[source]
+----
+git submodule init
+git submodule update
+----
 
 [start=3]
+. Write your asciidoc slides in +src/main/slide/_backend_+ (by default +_backend_+ is +deckjs+)
+
+[start=4]
 . To generate your slides, just launch :
 [source]
 ----
 mvn
 ----
 
-[start=4]
+[start=5]
 . Your slides are available in +target/generated-slides+ !
 
 == Backend
 
 Each backend has a Maven profile.
 
-=== deck.js
+=== deck.js (default)
 
 [source]
 ----
