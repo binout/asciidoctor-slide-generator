@@ -6,3 +6,4 @@ pom.xml.next
 release.properties
 *.iml
 .idea
+.DS_Store
