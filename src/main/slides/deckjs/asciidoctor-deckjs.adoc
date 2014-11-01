@@ -1,0 +1,61 @@
+= Asciidoctor
+Benoit Prioux <benoit.prioux@gmail.com>
+:icons: font
+
+== Me
+
+image::avatar.png[float="right"]
+
+icon:twitter[] @binout +
+icon:github[] https://github.com/binout
+
+* Développeur Java depuis presque 10 ans
+
+image::lectra.gif[float="right"]
+
+* Technical Leader chez Lectra,
+numéro un mondial des solutions dédiées à l'industrie du textile (machines et logiciels)
+
+image::bordeauxjug.jpg[float="right"]
+
+* Membre du Bordeaux JUG
+
+[canvas-image="images/writing-is-my-hobby.jpg"]
+== Writing is my hobby
+
+== Une solution : Asciidoc
+
+image::asciidoc.png[float="right"]
+
+Langage de _balisage_, créé en 2002 avec un processeur en `Python`
+
+[options="step"]
+Parce que :
+
+[options="step"]
+* on se concentre plus sur le fond que sur la forme
+* c'est du texte, donc un éditeur classique suffit
+* on peut gérer l'historique avec un SCM
+* à partir d'une même source, on peut publier vers plusieurs formats
+* on a un peu l'impression de hacker ;-)
+
+== Exemple
+
+[source]
+----
+= Hello World !
+Benoit Prioux <benoit.prioux@gmail.com>
+
+Introduction à http://asciidoc.org[AsciiDoc].
+
+== Première Section
+
+* foo
+* bar
+
+== Deuxième Section
+
+1. item 1
+2. item 2
+
+----
